@@ -1,0 +1,13 @@
+opencv-python
+numpy
+easyocr
+pytesseract
+matplotlib
+PyMuPDF
+Pillow
+pdfplumber
+open-clip-torch
+transformers
+langchain-text-splitters
+chromadb
+sentence-transformers
