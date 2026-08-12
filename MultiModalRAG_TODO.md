@@ -16,21 +16,21 @@
 - [T] Confirm dual-path works: OCR text + visual embedding, independently
 
 ## Phase 3: Chunking + Indexing
-- [ ] Implement semantic/recursive chunking for text
-- [ ] Attach metadata (page number, source image path) to every chunk
-- [ ] Set up vector store (Chroma or Qdrant)
-- [ ] Store text-chunk embeddings and image embeddings (same or linked collections)
+- [T] Implement semantic/recursive chunking for text
+- [T] Attach metadata (page number, source image path) to every chunk
+- [T] Set up vector store (Chroma or Qdrant)
+- [T] Store text-chunk embeddings and image embeddings (same or linked collections)
 
 ## Phase 4: Retrieval
-- [ ] Implement dense (embedding) search
-- [ ] Implement BM25 keyword search
-- [ ] Add cross-encoder reranker
-- [ ] Query fan-out across text + image collections, merge results
+- [T] Implement dense (embedding) search
+- [T] Implement BM25 keyword search
+- [T] Add cross-encoder reranker
+- [T] Query fan-out across text + image collections, merge results
 
 ## Phase 5: Generation
-- [ ] Wire retrieved chunks into LLM call (local via Ollama, or API)
-- [ ] Enforce citation of page/image source in every answer
-- [ ] Test end-to-end: PDF in → question → cited answer out
+- [T] Wire retrieved chunks into LLM call (local via Ollama, or API)
+- [T] Enforce citation of page/image source in every answer
+- [T] Test end-to-end: PDF in → question → cited answer out
 
 ## Phase 6: What Makes It "Major"
 - [ ] Build 20-30 QA eval set

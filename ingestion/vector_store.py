@@ -75,16 +75,16 @@ if __name__ == "__main__":
 
     pdf_path = "data/sample2.pdf"
     text_collection = get_text_collection()
-image_collection = get_image_collection()
+    image_collection = get_image_collection()
 
-pages = extract_from_pdf(pdf_path)
-for page in pages:
-    chunks = chunk_page(pdf_path, page)
-    add_text_chunks(text_collection, chunks)
+    pages = extract_from_pdf(pdf_path)
+    for page in pages:
+        chunks = chunk_page(pdf_path, page)
+        add_text_chunks(text_collection, chunks)
 
-    for img_path in page["image_paths"]:
-        img_emb = embed_image(img_path)
-        add_image_embedding(image_collection, img_path, img_emb, pdf_path, page["page_num"])
+        for img_path in page["image_paths"]:
+            img_emb = embed_image(img_path)
+            add_image_embedding(image_collection, img_path, img_emb, pdf_path, page["page_num"])
 
-    print(f"Text items: {text_collection.count()}")
-    print(f"Image items: {image_collection.count()}")
+        print(f"Text items: {text_collection.count()}")
+        print(f"Image items: {image_collection.count()}")

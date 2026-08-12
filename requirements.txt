@@ -11,3 +11,4 @@ transformers
 langchain-text-splitters
 chromadb
 sentence-transformers
+rank_bm25
