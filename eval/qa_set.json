@@ -1,0 +1,58 @@
+[
+  {
+    "question": "What is one problem frequently observed in urban communities?",
+    "expected_answer": "Potholes",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "Abstract \nUrban communities often face recurring civic problems such as potholes, damaged \nstreetlights, and unmanaged waste. Despite being frequently observed by citizens, these \nissues often remain unresolved due to fragmented reporting channels and lack of \naccountability. To address this gap, we propose a Crowdsourced Civic Issue Reporting and \nResolution System \u2014 a mobile-first, web-enabled platform designed to empower citizens,"
+  },
+  {
+    "question": "What is the main problem faced by urban communities in terms of civic issues?",
+    "expected_answer": "Recurring civic problems such as potholes, damaged streetlights, and unmanaged waste.",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "Abstract \nUrban communities often face recurring civic problems such as potholes, damaged \nstreetlights, and unmanaged waste. Despite being frequently observed by citizens, these \nissues often remain unresolved due to fragmented reporting channels and lack of \naccountability. To address this gap, we propose a Crowdsourced Civic Issue Reporting and \nResolution System \u2014 a mobile-first, web-enabled platform designed to empower citizens,"
+  },
+  {
+    "question": "What is Aadhaar-based authentication used for in this platform?",
+    "expected_answer": "for genuineness of captured images of civic issues",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "streamline communication, and enhance municipal responsiveness. \nThrough this platform, users can capture real-time images of civic issues (with automatic \ngeotagging and Aadhaar-based authentication for genuineness), submit them as complaints, \nand choose whether to make them public or private. Other users can upvote complaints to \nhighlight their priority. The system integrates three dashboards: \n\uf0b7 \nUser Dashboard: Profile management, location-based complaints, upvotes,"
+  },
+  {
+    "question": "What authentication method is used for genuineness of images submitted as complaints?",
+    "expected_answer": "Aadhaar-based authentication",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "streamline communication, and enhance municipal responsiveness. \nThrough this platform, users can capture real-time images of civic issues (with automatic \ngeotagging and Aadhaar-based authentication for genuineness), submit them as complaints, \nand choose whether to make them public or private. Other users can upvote complaints to \nhighlight their priority. The system integrates three dashboards: \n\uf0b7 \nUser Dashboard: Profile management, location-based complaints, upvotes,"
+  },
+  {
+    "question": "What is the purpose of the 'In Progress' status?",
+    "expected_answer": "Yellow",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "User Dashboard: Profile management, location-based complaints, upvotes, \ncomplaint tracking with color-coded statuses (Pending/Red, In Progress/Yellow, \nResolved/Green), and structured communication with authorities. \n\uf0b7 \nAuthority Dashboard: Department-specific complaint list, step-wise resolution \ntracking, communication with users and admins, and statistics on performance. \n\uf0b7 \nAdmin Dashboard: Central oversight of all complaints, setting resolution timelines,"
+  },
+  {
+    "question": "What is the color-coded status for resolved complaints?",
+    "expected_answer": "Green",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "User Dashboard: Profile management, location-based complaints, upvotes, \ncomplaint tracking with color-coded statuses (Pending/Red, In Progress/Yellow, \nResolved/Green), and structured communication with authorities. \n\uf0b7 \nAuthority Dashboard: Department-specific complaint list, step-wise resolution \ntracking, communication with users and admins, and statistics on performance. \n\uf0b7 \nAdmin Dashboard: Central oversight of all complaints, setting resolution timelines,"
+  },
+  {
+    "question": "What does the solution aim to bridge between citizens and?",
+    "expected_answer": "local governance",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "issuing reminders, escalating unresolved issues, and monitoring overall system \nperformance.. \nThis solution ensures transparency, accountability, and engagement by bridging the gap \nbetween citizens and local governance, fostering a collaborative ecosystem for smarter cities \nand more responsive municipal services."
+  },
+  {
+    "question": "What is one aspect of the solution?",
+    "expected_answer": "issuing reminders",
+    "source_pdf": "data/sample2.pdf",
+    "page_num": 1,
+    "source_chunk": "issuing reminders, escalating unresolved issues, and monitoring overall system \nperformance.. \nThis solution ensures transparency, accountability, and engagement by bridging the gap \nbetween citizens and local governance, fostering a collaborative ecosystem for smarter cities \nand more responsive municipal services."
+  }
+]

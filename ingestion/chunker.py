@@ -41,6 +41,7 @@ def chunk_page(pdf_path, page):
         combined_text += "\n\n" + page["ocr_text"]
 
     raw_chunks = chunk_text(combined_text)
+    raw_chunks = [c for c in raw_chunks if not _is_garbled_text(c)]
 
     return [
         {
@@ -52,6 +53,24 @@ def chunk_page(pdf_path, page):
         }
         for i, chunk in enumerate(raw_chunks)
     ]
+
+_COMMON_ENGLISH_WORDS = {
+    "the", "and", "of", "in", "for", "to", "is", "are", "with", "on",
+    "by", "as", "that", "this", "a", "an", "or", "from", "at", "be",
+    "which", "it", "these", "such", "can", "will", "their", "its",
+}
+
+
+def _is_garbled_text(text, min_stopword_ratio=0.08, max_long_word_ratio=0.15):
+    words = [w.strip(".,;:()[]\"'") for w in text.lower().split()]
+    words = [w for w in words if w]
+    if len(words) < 5:
+        return False
+
+    stopword_ratio = sum(1 for w in words if w in _COMMON_ENGLISH_WORDS) / len(words)
+    long_word_ratio = sum(1 for w in words if len(w) > 12) / len(words)
+
+    return stopword_ratio < min_stopword_ratio or long_word_ratio > max_long_word_ratio
 
 
 if __name__ == "__main__":

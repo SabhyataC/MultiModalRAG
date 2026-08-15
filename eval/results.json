@@ -1,0 +1,66 @@
+{
+  "summary": {
+    "num_questions": 8,
+    "recall_at_k": 1.0,
+    "precision_at_k": 0.19999999999999998,
+    "faithfulness_rate": 1.0
+  },
+  "per_question": [
+    {
+      "question": "What is one problem frequently observed in urban communities?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "Potholes. [1]"
+    },
+    {
+      "question": "What is the main problem faced by urban communities in terms of civic issues?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "The main problem faced by urban communities in terms of civic issues is the lack of accountability and unresolved civic problems such as potholes, damaged streetlights, and unmanaged waste. This is due to fragmented reporting channels, as stated in [1]."
+    },
+    {
+      "question": "What is Aadhaar-based authentication used for in this platform?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "Aadhaar-based authentication is used for genuineness [1] and authentication [1] purposes, as well as for Aadhaar-linked verification [2] and KYC (Know Your Customer) [2] for potential offenders [2]."
+    },
+    {
+      "question": "What authentication method is used for genuineness of images submitted as complaints?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "The authentication method used for genuineness of images submitted as complaints is Aadhaar-based authentication. [1] [2]\n\nNote that both [1] and [2] sources point to the same authentication method, indicating that the information is consistent across both sources."
+    },
+    {
+      "question": "What is the purpose of the 'In Progress' status?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "The purpose of the 'In Progress' status is not explicitly stated in the provided sources. However, it can be inferred that it is used to indicate the current status of a complaint that is being actively worked on by authorities. \n\nOne can assume that the 'In Progress' status is likely used to keep users informed of the current status of their complaint, allowing them to track progress and potentially upvote or comment on the issue being addressed.\n\nHowever, without further information, it cannot be confirmed what the 'In Progress' status specifically represents."
+    },
+    {
+      "question": "What is the color-coded status for resolved complaints?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "The color-coded status for resolved complaints is Green."
+    },
+    {
+      "question": "What does the solution aim to bridge between citizens and?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "The solution aims to bridge the gap between citizens and local governance. [1][2]"
+    },
+    {
+      "question": "What is one aspect of the solution?",
+      "retrieval_hit": true,
+      "hit_rank": 1,
+      "faithful": true,
+      "generated_answer": "One aspect of the solution is the ability for users to capture real-time images of civic issues with automatic geotagging and Aadhaar-based authentication for genuineness, and submit them as complaints. This feature allows for more accurate and reliable reporting of issues, as well as ensures the authenticity of the complaint. [2]"
+    }
+  ]
+}

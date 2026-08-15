@@ -43,9 +43,11 @@ def extract_from_pdf(pdf_path, image_output_dir="output"):
             # Run OCR on this image
             annotated_path = os.path.join(image_output_dir, f"annotated_{out_name}.png")
             try:
-                img_ocr_text = run_ocr(out_path, output_path=annotated_path, show_debug=False)
-                if img_ocr_text.strip():
-                    ocr_texts.append(img_ocr_text.strip())
+                img_ocr_text = run_ocr(out_path, output_path=annotated_path, show_debug=False).strip()
+                if img_ocr_text and _is_garbled_ocr(img_ocr_text):
+                    print(f"[WARN] Skipping likely-garbled OCR from {out_path}")
+                elif img_ocr_text:
+                    ocr_texts.append(img_ocr_text)
             except Exception as e:
                 print(f"[WARN] OCR failed on {out_path}: {e}")
 
@@ -59,6 +61,34 @@ def extract_from_pdf(pdf_path, image_output_dir="output"):
     doc.close()
     return pages
 
+
+_COMMON_ENGLISH_WORDS = {
+    "the", "and", "of", "in", "for", "to", "is", "are", "with", "on",
+    "by", "as", "that", "this", "a", "an", "or", "from", "at", "be",
+    "which", "it", "these", "such", "can", "will", "their", "its",
+}
+
+
+def _is_garbled_ocr(text, min_stopword_ratio=0.08, max_long_word_ratio=0.15):
+    """
+    Real prose is dense with short common function words ("the", "and",
+    "of", etc). OCR garbage from diagrams/tables tends to merge words
+    together (missing spaces), which erases these function words and
+    inflates average word length -- even though the merged text is
+    still fully alphabetic, so a symbol/alpha-ratio check misses it.
+    """
+    words = [w.strip(".,;:()[]\"'") for w in text.lower().split()]
+    words = [w for w in words if w]
+    if len(words) < 5:
+        return False  # too short to judge reliably
+
+    stopword_count = sum(1 for w in words if w in _COMMON_ENGLISH_WORDS)
+    stopword_ratio = stopword_count / len(words)
+
+    long_word_count = sum(1 for w in words if len(w) > 12)
+    long_word_ratio = long_word_count / len(words)
+
+    return stopword_ratio < min_stopword_ratio or long_word_ratio > max_long_word_ratio
 
 def extract_tables_from_pdf(pdf_path):
     """

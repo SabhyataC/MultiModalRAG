@@ -35,15 +35,24 @@ def _reciprocal_rank_fusion(*ranked_lists):
     return [doc_lookup[doc_id] for doc_id in fused_ids]
 
 
-def hybrid_search(query, top_k=5, fanout_k=15):
+def _filter_by_source(results, source_pdf):
+    if not source_pdf:
+        return results
+    return [r for r in results if r["metadata"].get("source_pdf") == source_pdf]
+
+
+def hybrid_search(query, top_k=5, fanout_k=15, source_pdf=None):
     """
     Full Phase 4 pipeline: fan out to dense text, BM25 text, and dense
     image search, fuse + rerank the text results, and return text and
     image results separately.
+
+    source_pdf: if given, restricts results to only this document
+    (matched against metadata["source_pdf"], e.g. "sample2.pdf").
     """
-    dense_results = dense_search_text(query, top_k=fanout_k)
-    bm25_results = bm25_search_text(query, top_k=fanout_k)
-    image_results = dense_search_images(query, top_k=top_k)
+    dense_results = _filter_by_source(dense_search_text(query, top_k=fanout_k), source_pdf)
+    bm25_results = _filter_by_source(bm25_search_text(query, top_k=fanout_k), source_pdf)
+    image_results = _filter_by_source(dense_search_images(query, top_k=top_k), source_pdf)
 
     fused_text = _reciprocal_rank_fusion(dense_results, bm25_results)
     reranked_text = rerank(query, fused_text, top_k=top_k)
